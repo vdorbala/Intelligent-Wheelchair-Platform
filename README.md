@@ -6,3 +6,6 @@ Robots (IROS), 2019.
 Paper Title: A Deep Learning Approach for Robust Corridor Following
 
 Authors: Vishnu Sashank Dorbala, A.H. Abdul Hafez, C.V. Jawahar
+
+<b> Link to [Paper](https://vdorbala.github.io/pdf/IROS_paper.pdf), 
+[Video](https://vdorbala.github.io/pdf/IROS_video.mp4)</b>.
