@@ -8,7 +8,7 @@ def cuberoot(x):
     return -(-x)**(1./3.)
 
 def main():
-    # img = cv2.imread("/home/vdorbala/ICRA/Captured_Images/Captured22/10.png")
+    # img = cv2.imread("PATH")
     # w,img1 = classical(img)
     # print ("w original is {}".format(w))
     lambda_1 = 100
