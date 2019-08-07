@@ -1,0 +1,282 @@
+# # # TrajectoryPlannerROS:
+
+# # #   # Current limits based on AZ3 standalone configuration.
+# # #   acc_lim_x:  0.75
+# # #   acc_lim_y:  0.75
+# # #   acc_lim_theta: 4
+# # #   max_vel_x:  0.5
+# # #   min_vel_x:  0.24
+# # #   max_vel_theta: 0.5
+# # #   min_vel_theta: -0.5
+# # #   min_in_place_vel_theta: 0.25
+# # #   holonomic_robot: false
+
+# # #   xy_goal_tolerance:  0.25
+# # #   yaw_goal_tolerance: 0.25
+# # #   latch_xy_goal_tolerance: true
+  
+# # #   # make sure that the minimum velocity multiplied by the sim_period is less than twice the tolerance on a goal. Otherwise, the robot will prefer to rotate in place just outside of range of its target position rather than moving towards the goal.
+# # #   sim_time: 1.5 # set between 1 and 2. The higher he value, the smoother the path (though more samples would be required).
+# # #   sim_granularity: 0.025
+# # #   angular_sim_granularity: 0.05
+# # #   vx_samples: 12
+# # #   vtheta_samples: 20
+
+# # #   meter_scoring: true
+
+# # #   pdist_scale: 0.7 # The higher will follow more the global path.
+# # #   gdist_scale: 0.8
+# # #   occdist_scale: 0.01
+# # #   publish_cost_grid_pc: false
+
+# # # #move_base
+# # # controller_frequency: 10.0 #The robot can move faster when higher.
+
+# # # #global planner 
+# # # NavfnROS:
+# # #     allow_unknown: true
+# # #     visualize_potential: false
+
+# # # TrajectoryPlannerROS: 
+# # #   max_vel_x: 3.0
+# # #   max_vel_y: 0.0
+# # #   min_vel_x: 1.0
+# # #   #min_vel_x: 0.1 
+# # #   #max_vel_theta: 1.0 
+# # #   #min_in_place_vel_theta: 1.0 
+
+# # #   acc_lim_theta: 5.0 
+# # #   #acc_lim_x: 0.5 
+# # #   #acc_lim_y: 0.5
+# # #   holonomic_robot: false
+
+# # #   heading_scoring: true 
+# # #   heading_scoring_timestep: 15.0 
+# # #   holonomic_robot: false
+# # #   meter_scoring: true 
+
+# # #   controller_frequency: 10.0
+
+# # #   yaw_goal_tolerance: 0.5 
+# # #   xy_goal_tolerance: 0.5 
+# # #   sim_period: 5.0 
+# # #   dwa: false
+# # #   vx_samples: 30 
+# # #   vtheta_samples: 30
+
+# # TrajectoryPlannerROS:
+# #   #Set the acceleration limits of the robot
+# #   acc_lim_th: 0.5
+# #   acc_lim_x: 0.5
+# #   acc_lim_y: 0
+
+# #   #Set the velocity limits of the robot
+# #   max_vel_x: 0.50
+# #   min_vel_x: 0.40
+# #   max_vel_theta: 1
+# #   min_vel_theta: 0.4
+# #   max_rotational_vel: 0.6
+# #   min_in_place_rotational_vel: 0.6
+# #   min_in_place_vel_theta: 0.6
+
+# #   #The velocity the robot will command when trying to escape from a stuck situation
+# #   escape_vel: -0.2
+
+# #   #For this example, we'll use a holonomic robot
+# #   holonomic_robot: false
+
+# #   #Set the tolerance on achieving a goal
+# #   xy_goal_tolerance: 0.1
+# #   yaw_goal_tolerance: 0.3
+# #   latch_xy_goal_tolerance: false
+
+# #   #We'll configure how long and with what granularity we'll forward simulate trajectories
+# #   sim_time: 2
+# #   sim_granularity: 0.025
+# #   angular_sim_granularity: 0.025
+# #   vx_samples: 15
+# #   vtheta_samples: 20
+# #   controller_frequency: 10.0
+
+# #   meter_scoring: true
+
+# #   pdist_scale: 11 # The higher will follow more the global path.
+# #   gdist_scale: 1
+# #   occdist_scale: 0.01
+# #   heading_lookahead: 1
+# #   heading_scoring: false
+# #   heading_scoring_timestep: 0.8
+# #   publish_cost_grid_pc: true
+
+# #   #Parameters for scoring trajectories
+# #   goal_distance_bias: 0.8
+# #   path_distance_bias: 1.0
+# #   occdist_scale: 0.01
+# #   heading_lookahead: 0.325
+
+# #   #We'll use the Dynamic Window Approach to control instead of Trajectory Rollout for this example
+# #   dwa: false
+
+# #   #global planner
+# #   NavfnROS:
+# #     allow_unknown: true
+# #     visualize_potential: false
+
+
+# #   #How far the robot must travel before oscillation flags are reset
+# #   oscillation_reset_dist: 0.05
+
+# #   #Eat up the plan as the robot moves along it
+# #   prune_plan: false
+
+# #   # Global Frame id
+# #   # global_frame_id: odom_combined
+
+# # TrajectoryPlannerROS:
+
+# #   acc_lim_th: 0.1
+# #   acc_lim_x: 0.1
+# #   acc_lim_y: 0
+
+# #   max_vel_x: 0.6
+# #   min_vel_x: 0.4
+# #   max_vel_theta: 0.6
+# #   min_vel_theta: 0.5
+# #   max_rotational_vel: 0.6
+# #   min_in_place_rotational_vel: 0.45
+# #   min_in_place_vel_theta: 0.45
+
+# #   holonomic_robot: false
+
+# #   escape_vel: -0.2
+
+# #   xy_goal_tolerance:  0.5
+# #   yaw_goal_tolerance: 0.5
+# #   latch_xy_goal_tolerance: false
+  
+# #   sim_time: 1.5
+# #   sim_granularity: 0.025
+# #   angular_sim_granularity: 0.05
+# #   vx_samples: 25
+# #   vtheta_samples: 25
+
+# #   meter_scoring: true
+
+# #   pdist_scale: 11 # The higher will follow more the global path.
+# #   gdist_scale: 0.8
+# #   occdist_scale: 0.01
+# #   publish_cost_grid_pc: true
+
+# #   prune_plan: false
+
+# # #move_base
+# # controller_frequency: 20.0 #The robot can move faster when higher.
+
+# # dwa: true
+
+# # #global planner 
+# # NavfnROS:
+# #     allow_unknown: true
+# #     visualize_potential: true
+
+# TrajectoryPlannerROS:
+#   max_trans_vel: 0.60
+#   min_trans_vel: 0.4
+#   max_vel_x: 0.60
+#   min_vel_x: 0.4
+#   # max_vel_theta: 0.90
+#   # min_vel_theta: -0.6
+#   max_rot_vel: 0.7
+#   min_rot_vel: 0.6
+#   min_in_place_vel_theta: 0.6
+#   max_vel_y: 0
+
+#   acc_lim_theta: 0.5
+#   # acc_limit_trans: 2.0
+#   acc_lim_x: 0.5
+#   acc_lim_y: 0
+
+#   holonomic_robot: false
+#   vy_samples: 0
+
+#   escape_vel: 0.1
+
+#   sim_time: 1.5
+#   sim_granularity: 0.025
+#   angular_sim_granularity: 0.025
+#   vx_samples: 15
+#   vtheta_samples: 25
+
+#   controller_frequency: 10.0
+
+#   xy_goal_tolerance:  0.5
+#   yaw_goal_tolerance: 0.5
+#   # oscillation reset dist: 0.1
+#   latch_xy_goal_tolerance: false
+
+#   # controller_frequency: 10.0
+
+#   meter_scoring: true
+
+#   pdist_scale: 0.8 # The higher will follow more the global path.
+#   gdist_scale: 0.6  
+#   # path_distance_bias: 32.0
+#   # goal_distance_bias: 9.0
+#   occdist_scale: 0.020
+#   # stop_time_buffer: 0.5
+#   publish_cost_grid_pc: true
+#   # oscillation_reset_dist: 0.05
+#   prune_plan: true
+
+#   dwa: true
+
+#   NavfnROS:
+#     allow_unknown: true
+#     visualize_potential: true
+
+TrajectoryPlannerROS:
+
+  # Current limits based on AZ3 standalone configuration.
+  acc_lim_x:  0.05
+  acc_lim_y:  0
+  acc_lim_theta: 0.02
+  min_vel_y: 0 
+  max_vel_x:  0.49
+  min_vel_x:  0.4
+  max_vel_theta: 0.84
+  min_vel_theta: -0.63
+  min_in_place_vel_theta: 0.63
+  holonomic_robot: false
+
+  xy_goal_tolerance:  1
+  yaw_goal_tolerance: 1
+  latch_xy_goal_tolerance: false
+
+  escape_vel: -0.3
+  
+  # make sure that the minimum velocity multiplied by the sim_period is less than twice the tolerance on a goal. Otherwise, the robot will prefer to rotate in place just outside of range of its target position rather than moving towards the goal.
+  sim_time: 2 # set between 1 and 2. The higher he value, the smoother the path (though more samples would be required).
+  sim_granularity: 0.05
+  angular_sim_granularity: 0.025
+  vx_samples: 200
+  vtheta_samples: 400
+
+  controller_frequency: 20.0
+
+  meter_scoring: true
+
+  # pdist_scale: 0.8 # The higher will follow more the global path.
+  # gdist_scale: 0.6  
+  path_distance_bias: 35.0
+  goal_distance_bias: 20.0
+  occdist_scale: 0.020
+  # stop_time_buffer: 0.5
+  publish_cost_grid_pc: true
+  # oscillation_reset_dist: 0.05
+  prune_plan: true
+
+  dwa: true
+
+  NavfnROS:
+    allow_unknown: true
+    visualize_potential: true

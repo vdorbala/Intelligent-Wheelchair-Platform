@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- broadcasting the robot transforms -->
+  <node name="robot_tf_publisher" pkg="kangaroo_driver" type="robot_tf_publisher.py" output="screen" />
+  <!-- broadcasting the kinect orientation transform-->
+  <node name="kinect2_orientation_tf" pkg="kangaroo_driver" type="kinect2_orientation_tf.py" output="screen" />
+  <!-- broadcasting the laser orientation transform-->
+  <node name="laser_link" pkg="kangaroo_driver" type="laser_link.py" output="screen" />
+
+</launch>

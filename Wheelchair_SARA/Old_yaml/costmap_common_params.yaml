@@ -1,0 +1,45 @@
+footprint: [[ 0.5,  0.5],[-0.8,  0.5], [-0.8, -0.5], [0.5, -0.5], [0.6, 0]]
+clearing: true
+footprint_padding: 0.01
+
+inflation_layer:
+  inflation_radius: 0.1
+
+# transform_tolerance: 0.5
+
+map_topic: /map
+subscribe_to_updates: true
+
+
+obstacle_range: 6.0
+raytrace_range: 8.5
+max_obstacle_height: 0.4
+track_unknown_space: true
+
+observation_sources: laser_scan_sensor
+
+# point_cloud_sensor: { 
+#   data_type: PointCloud2, 
+#   topic: /rtabmap/cloud_map, 
+#   expected_update_rate: 3.75, 
+#   marking: true, 
+#   clearing: true, 
+#   # min_obstacle_height: -10.0, 
+#   # max_obstacle_height: 10.0
+# }
+
+
+laser_scan_sensor: {
+  sensor_frame: /laser,
+  data_type: LaserScan, 
+  topic: /laser_scan, 
+  # expected_update_rate: 0.0, 
+  marking: true, 
+  clearing: true,
+  # min_obstacle_height: -10.0, 
+  # max_obstacle_height: 10.0
+}
+
+global_frame: map
+robot_base_frame: base_link
+always_send_full_costmap: true

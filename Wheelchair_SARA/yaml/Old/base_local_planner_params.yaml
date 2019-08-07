@@ -1,0 +1,49 @@
+TrajectoryPlannerROS:
+
+  # Current limits based on AZ3 standalone configuration.
+  acc_lim_x:  0.1
+  acc_lim_y:  0
+  acc_lim_theta: 0.05
+
+  min_vel_y: 0 
+  max_vel_x:  0.4
+  min_vel_x:  0.3
+  max_vel_theta: 0.4
+  min_vel_theta: -0.4
+  min_in_place_vel_theta: 0.13
+  holonomic_robot: false
+
+  xy_goal_tolerance:  0.4
+  yaw_goal_tolerance: 0.3
+  latch_xy_goal_tolerance: false
+
+  escape_vel: -0.1
+  
+  # make sure that the minimum velocity multiplied by the sim_period is less than twice the tolerance on a goal. Otherwise, the robot will prefer to rotate in place just outside of range of its target position rather than moving towards the goal.
+  sim_time: 5 # set between 1 and 2. The higher he value, the smoother the path (though more samples would be required).
+  sim_granularity: 0.05
+  angular_sim_granularity: 2
+  vx_samples: 1500
+  vth_samples: 2000
+  vtheta_samples: 2000
+
+  controller_frequency: 10.0
+
+  meter_scoring: true
+
+  dwa: true
+  # pdist_scale: 5 # The higher will follow more the global path.
+  # gdist_scale: 5  
+  path_distance_bias: 10.0
+  goal_distance_bias: 10.0
+  occdist_scale: 0.01
+  stop_time_buffer: 0.5
+  publish_cost_grid_pc: true
+  # oscillation_reset_dist: 0.05
+  # max_scaling_factor: 0.2
+  # scaling_speed: 0.37
+  prune_plan: true
+
+  NavfnROS:
+    allow_unknown: false
+    visualize_potential: true

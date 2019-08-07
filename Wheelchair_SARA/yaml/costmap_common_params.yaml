@@ -1,0 +1,45 @@
+
+
+footprint: [[ 0.4,  0.4],[-0.4,  0.4], [-0.4, -0.4], [0.4, -0.4], [0.5, 0]]
+footprint_padding: -0.05
+
+inflation_layer:
+  inflation_radius: 0.08
+
+transform_tolerance: 2
+
+  
+obstacle_layer:
+  obstacle_range: 4.0
+  raytrace_range: 3.0
+
+  observation_sources: laser_scan_sensor  #point_cloud_sensor
+
+  # point_cloud_sensor: { 
+  #   sensor_frame: /kinect2_link,
+  #   data_type: PointCloud2, 
+  #   #topic: /rtabmap/cloud_map,
+  #   topic: /voxel_cloud, 
+  #   expected_update_rate: 100, 
+  #   marking : true,
+  #   clearing: true, 
+  #   min_obstacle_height: 0, 
+  #   max_obstacle_height: 10.0
+  #   #The maximum height in meters of a sensor reading considered valid. 
+  #   #This is usually set to be slightly higher than the height of the robot.
+  #   #Setting this parameter to a value greater than the global max_obstacle_height parameter has no effect.
+  #   #Setting this parameter to a value less than the global max_obstacle_height will filter out points from this sensor above that height
+  # }
+
+
+
+  laser_scan_sensor: {
+    sensor_frame: /laser,
+    data_type: LaserScan, 
+    topic: /laser_scan, 
+    expected_update_rate: 5, 
+    marking: true, 
+    clearing: true,
+    # min_obstacle_height: -10.0, 
+    # max_obstacle_height: 10.0
+  }

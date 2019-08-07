@@ -1,0 +1,100 @@
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <std_msgs/Int32MultiArray.h>
+#include <cmath>
+
+#define pi = 3.1416
+using namespace std;
+double x=0,y=0,v1,v2,rps1,rps2,count1,count2;
+float a;//theta
+float w; //angularvelocity3//
+float r=65;//(radius of wheel)
+float l;//(turning radius)
+float b=250;//distance between 2 wheels
+float w3;
+ros::Time current_time, last_time;
+/*
+void model(){ while(rps1!=0 && rps2!=0 && ros::ok())
+{
+	 current_time = ros::Time::now();
+	 cout<<"last time is"<<last_time.toSec()<<endl;
+	 double dt = (current_time - last_time).toSec();
+	 cout<<"time is "<<dt<<endl;
+	
+
+
+	v1=r*rps1;
+	v2=r*rps2;
+	cout<<"v1 = "<<v1<<endl;
+	cout<<"v2 = "<<v2<<endl;
+	//usleep(2000);
+
+
+	if((v1+v2)!=0)
+	{
+
+		l=(v1*b)/(v2+v1); 
+                cout<<"l is "<<l<<endl;
+		w3=v1/l;
+                
+		a=w3*dt;
+		x=x+a*(b/2+fabs(l));
+		y=y-(fabs(l)/l)*(l+b/2);
+		cout<<"x= "<<x<<endl;
+	//	usleep(2000);
+		cout<<"y= "<<y<<endl;
+	//	usleep(2000);		
+	}
+
+	else
+	{
+		x=x+v1*dt;
+		y=y;
+		cout<<"x= "<<x<<endl;
+	//	usleep(2000);
+		cout<<"y= "<<y<<endl;
+	//	usleep(2000);
+	
+	}
+	
+ last_time = current_time; 
+ break;
+	
+}
+
+}
+
+*/
+void call_back (const std_msgs::Int32MultiArray::ConstPtr& speed) 
+	{
+	
+	 rps1=speed->data[0];
+	//cout<<"rps1 is "<<rps1<<endl;
+	 rps2=speed->data[1];
+        //cout<<"rps2 is "<<rps2<<endl;
+	ROS_INFO(" qwetyu");
+	//model();
+}
+
+	
+	 
+	 
+
+int main(int argc,char** argv)
+{
+	ros::init(argc,argv,"localise");
+
+	ros::NodeHandle o;
+	ros::Subscriber s = o.subscribe("/speed_counter",1,call_back);
+    	while(ros::ok)
+	{
+		ROS_INFO(" xyz");
+	}
+
+	ros::spinOnce();      
+      return 0;
+}

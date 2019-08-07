@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- kanagroodriver node to supply ticks of the encoders -->
+  <node name="kangaroo_driver_node" pkg="kangaroo_driver" type="kangaroo_driver_node" output="screen" />
+  <!-- converting ticks from kangroo to lwheel and rwheel format-->
+  <node name="kangroo_to_diff_translator" pkg="kangaroo_driver" type="kangaroo_to_diff_translator.py" output="screen" />
+  <!-- using lwheel and rwheel we compute odometry and the required transforms-->
+  <node name="odometry_tf_publisher" pkg="kangaroo_driver" type="odometry_tf_publisher.py" output="screen" />
+  <!-- Node which accepts cmd_vel(command velocity) and converts it to a JointTraj message subscribed by the kangaroo driver node -->
+  <node name="cmdvel_to_jointTraj" pkg="kangaroo_driver" type="cmdvel_to_jointTraj.py" output="screen" />
+  
+</launch>
+
+
+
