@@ -149,7 +149,6 @@ int main(int argc, char *argv[])
         ros::init(argc, argv, "keyboard_tele");
    
         string response = "";
-	ROS_INFO("\n\n--- Roboteq Motor Controller Request Gateway Server ---\n");
 	ROS_INFO("Initializing...");
 	usleep(500000);
 	
