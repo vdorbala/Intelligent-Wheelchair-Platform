@@ -1,6 +1,4 @@
-Contains scripts used for several tasks on the smart wheelchair platform.
-
-Also deep learning scripts used for training our model.
+Contains scripts used for ICRA and IROS experiments on the platform.
 
 Dataset (3023 images): <b>[Link](https://drive.google.com/drive/folders/18fP8hUeHfNmsRTbzVsxBJvNtEoA2_3uD?usp=sharing)</b>
 
