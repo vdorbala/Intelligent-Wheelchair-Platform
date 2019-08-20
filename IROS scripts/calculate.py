@@ -1,10 +1,12 @@
+# File used for normalizing the true ground truth values received.
+
 mean = 0.0508461651
 
 stdev = 0.3333695309
 
-file = open("values1.csv", "w+")
+file = open("values.csv", "w+")
 
-f = open("captured15_n.csv","r+")
+f = open("all.csv","r+")
 
 lis = [line.split() for line in f]
 imgarr = []
