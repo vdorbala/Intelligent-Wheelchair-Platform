@@ -1,3 +1,4 @@
+# Classical approach to corridor following
 ## Run with python 3
 from __future__ import division
 import os
@@ -6,7 +7,7 @@ from os import path
 import time
 import sys
 
-sys.path.insert(0, '/home/vdorbala/ICRA/pylsd1')
+sys.path.insert(0, '/Path/to/pylsd/')
 
 from pysabertooth import Sabertooth
 import serial.tools.list_ports as port
@@ -871,9 +872,9 @@ def main():
 if __name__ == '__main__':
     
     ino = main()
-    print ("Warray values are : \n Max = {} \n Min = {} \n Average = {}".format(max(warray),min(warray),sum(warray)/len(warray)))
-    file = open("/home/vdorbala/ICRA/Captured_Images/Test10","w+")
+    #print ("Warray values are : \n Max = {} \n Min = {} \n Average = {}".format(max(warray),min(warray),sum(warray)/len(warray)))
+    file = open("/path/for/writing/values/obtained/","w+")
     warray = [val for sublist in warray for val in sublist]
     for no in range(len(warray)):   
         file.write("{},{}\n".format(no,warray[no]))
-    print ("Imgno is {}".format(ino))
+    #print ("Imgno is {}".format(ino))
