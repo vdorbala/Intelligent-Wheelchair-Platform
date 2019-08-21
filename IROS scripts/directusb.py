@@ -1,3 +1,4 @@
+# File for programming Sabertooth commands on the wheelchair.
 
 #!/usr/bin/env python
 #import arduinoserial
@@ -187,6 +188,7 @@ def translate(value, leftMin, leftMax, rightMin, rightMax):
    return rightMin + (valueScaled * rightSpan)
 
 def callback(data):
+# Callback function whenever a /cmd_vel is received from RoS
     #print data
     saber.text('m1:startup')
     saber.text('1,p100')
