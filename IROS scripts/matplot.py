@@ -1,3 +1,4 @@
+# Detecting click events for annotation
 import numpy as np
 import matplotlib.pyplot as plt
 coords = []
