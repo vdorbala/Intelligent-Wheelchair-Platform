@@ -1,4 +1,5 @@
 #RUN with python3
+## Running both Classical and CNN approaches on Images
 from __future__ import division
 import os
 from os import path
@@ -633,7 +634,7 @@ def main():
     net_error = 0
     while (q!=q_in+num*skip):
         print ("Image number is {}".format(q))
-        PATH_IMAGE = "/home/vdorbala/ICRA/Captured_Images/Captured18/" + str(q) + ".png"
+        PATH_IMAGE = "/Path/To/Image" + str(q) + ".png"
         img = cv2.imread(PATH_IMAGE)
         # w_cnn = cnn(img)
         # print ("\n\tw_CNN is {}".format(w_cnn[0]))
