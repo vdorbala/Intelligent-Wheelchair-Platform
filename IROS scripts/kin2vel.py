@@ -1,3 +1,6 @@
+# Using the CNN for corridor following, avoiding obstacles, and making turns.
+# Obstacles get detected via another file, and events are monitored from a pipe file. This workaround has to be done
+# because RoS does not support python 3.
 ## Run with python 3
 from __future__ import division
 import os
@@ -351,7 +354,7 @@ def image_loader(image):
 
 
 def vanishingpoint(image):
-
+# Need to finish integrating
 
 
     return image
@@ -367,7 +370,7 @@ max_val = 3.9251497395*0.7897025648 - 0.0967433495
 min_val = -4.538150963*0.7897025648 - 0.0967433495
 
 warray = []
-PATH =  "/home/vdorbala/ICRA/videos/Captured10/"
+PATH =  "/Path/to/captured/image"
 
 def main():
     global warray,NUMBER
@@ -385,7 +388,6 @@ def main():
     # ])
 
     print (max_val,min_val)
-
     for i in range(NUMBER):
         image = get_image(imgtopic)
         image1 = image.copy()
@@ -465,7 +467,7 @@ def listener():
     pipe_path = "/tmp/pipe"
     if not os.path.exists(pipe_path):
         os.mkfifo(pipe_path)
-    # Open the fifo. We need to open in non-blocking mode or it will stalls until
+    # Open the fifo. We need to open in non-blocking mode or it will stall until
     # someone opens it for writting
     pipe_fd = os.open(pipe_path, os.O_RDONLY | os.O_NONBLOCK)
     with os.fdopen(pipe_fd) as pipe:
@@ -498,7 +500,7 @@ def capture():
     out = cv2.VideoWriter('output1.avi',fourcc, 20.0,(1920,1080))
     # imgtopic = "/kinect2/{}/image_color".format(quality)
     num = 0
-    while num!=100:
+    while num!=100: # Running for 100 images
         image = get_image(imgtopic)
         if image.shape[2]>3:
             image = image[:,:,:3]
