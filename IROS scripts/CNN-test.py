@@ -1,4 +1,6 @@
 #RUN with python3
+# File for use on trained model.
+# Obtain angular velocity, and perform the robustness test by finding x coordinate of the vanishing point (VP).
 from __future__ import division
 import os
 from os import path
