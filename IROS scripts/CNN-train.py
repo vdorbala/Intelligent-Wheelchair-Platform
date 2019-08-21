@@ -1,3 +1,4 @@
+# File for training neural network. Also storing rsquare and loss values.
 from __future__ import print_function, division
 
 import matplotlib
