@@ -1,4 +1,4 @@
-# Training CNN using a Random Seed each time.
+# Comparing CNN output with Target velocity vector
 
 from __future__ import print_function, division
 
