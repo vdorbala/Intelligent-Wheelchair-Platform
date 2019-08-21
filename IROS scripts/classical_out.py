@@ -1,4 +1,6 @@
 #RUN with python3
+## FILE FOR RUNNING THE CLASSICAL APPROACH ON AN IMAGE
+
 from __future__ import division
 import os
 from os import path
@@ -6,7 +8,7 @@ from os import path
 import time
 import sys
 
-sys.path.insert(0, '/home/vdorbala/ICRA/pylsd/')
+sys.path.insert(0, '/Path/to/pylsd/')
 
 from pysabertooth import Sabertooth
 import serial.tools.list_ports as port
