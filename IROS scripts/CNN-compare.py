@@ -1,3 +1,5 @@
+# Training CNN using a Random Seed each time.
+
 from __future__ import print_function, division
 
 import matplotlib
