@@ -1,3 +1,5 @@
+# File for editing images in the dataset with their respective ground truths (all.csv)
+
 import sys
 import os
 import numpy as np
