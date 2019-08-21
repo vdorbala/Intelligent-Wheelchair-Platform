@@ -1,3 +1,4 @@
+# Draw Visdom graph
 import visdom
 from visdom import server
 import re
