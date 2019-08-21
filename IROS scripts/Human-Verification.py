@@ -1,3 +1,7 @@
+# For Human Verification on Unreliable images.
+# Opens up an image where the user has to click in the direction where the wheelchair might turn.
+# Compares the input to the prediction of the CNN and calculates a precision score.
+
 from __future__ import print_function, division
 
 import matplotlib
