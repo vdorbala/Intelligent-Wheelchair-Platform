@@ -1,3 +1,4 @@
+# File for Training the CNN model. Similar to CNN-train.py
 from __future__ import print_function, division
 
 import matplotlib
