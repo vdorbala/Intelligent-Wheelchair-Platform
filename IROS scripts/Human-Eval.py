@@ -1,3 +1,5 @@
+# File for Human Evaluation on Unreliable Images. Opens up an interface for selecting the direction in which motion should occur.
+
 from __future__ import print_function, division
 
 import matplotlib
