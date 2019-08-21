@@ -1,3 +1,5 @@
+# Similar to Jacobian-CNN.
+
 from __future__ import print_function, division
 
 import matplotlib
