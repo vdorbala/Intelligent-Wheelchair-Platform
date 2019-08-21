@@ -1,3 +1,4 @@
+# Solving the third degree equation for Robsutness Analysis in our paper.
 from __future__ import division
 from math import sqrt
 import sys
