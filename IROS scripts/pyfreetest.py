@@ -1,5 +1,5 @@
 # coding: utf-8
- 
+# Testing libfreenect2 for python.
 import numpy as np
 import sys
  
@@ -186,7 +186,5 @@ def test_sync_multi_frame():
     device.close()
 
 if __name__ == '__main__':
-    print ("lala")
     color = test_sync_multi_frame()
     print (next(color))
-    # cv2.imshow("Lala",color)
