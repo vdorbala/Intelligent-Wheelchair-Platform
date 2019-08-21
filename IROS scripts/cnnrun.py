@@ -1,4 +1,6 @@
 ## Run with python 3
+
+# Perform Corridor forllowing on the wheelchair using the CNN approach.
 from __future__ import division
 import os
 from os import path
