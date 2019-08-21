@@ -1,3 +1,7 @@
+# Predicting the Jacobian values first seperately, and using them to find the final 'w'.
+# Intention was to simplify the function that the CNN needs to predict.
+# Did not work as expected. Predicting the 'w' directly gave slightly better results.
+
 from __future__ import print_function, division
 
 import matplotlib
