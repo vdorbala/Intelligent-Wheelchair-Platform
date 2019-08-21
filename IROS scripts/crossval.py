@@ -1,3 +1,5 @@
+# File for performing cross validation during train-validation phase. 
+# Used R-square value as an evaulation metric.
 from __future__ import print_function, division
 import matplotlib
 # matplotlib.use('agg')
@@ -570,6 +572,9 @@ def initialize():
         model_ft_best = nn.DataParallel(model_ft_best).cuda()    
 
 
+# Cross Validation start Start        
+        
+        
 for epoch in range(0,10):
     initialize()
     value = nums[epoch]
