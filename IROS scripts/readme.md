@@ -6,3 +6,5 @@ Dataset (3023 images): <b>[Link](https://drive.google.com/drive/folders/18fP8hUe
 Trained Model: <b>[Link](https://drive.google.com/open?id=1L3M-a5Iw93FfwvkpEu7GGX6FDfQ1QFdN)</b>
 
 Ground Truths: <b>[Link](https://github.com/vdorbala/Intelligent-Wheelchair-Platform/blob/master/IROS%20scripts/all.csv)</b>
+      (a) -  Training Set: [Link](https://docs.google.com/spreadsheets/d/1G9iVH0vfmZoX3S6QhOFOWZWQPgOvKjmLftiUW6wk0mE/edit?usp=sharing)
+      (b) -  Test Set: [Link](https://docs.google.com/spreadsheets/d/1OuOHOIvu8B1tpEIkt207XrXP63Orgiq9N-vS7QsyoQY/edit?usp=sharing)
